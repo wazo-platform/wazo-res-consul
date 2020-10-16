@@ -26,12 +26,12 @@ SAMPLENAME = res_consul.conf.sample
 CONFNAME = $(basename $(SAMPLENAME))
 
 TARGET = res_consul.so
-OBJECTS = consul/client.o consul/request.o consul/server.o consul/watcher.o consul/base64.o consul/service.o res_consul.o
+OBJECTS = res_consul.o
 CFLAGS += -I.
 CFLAGS += -DHAVE_STDINT_H=1
 CFLAGS += -Wall -Wextra -Wno-unused-parameter -Wstrict-prototypes -Wmissing-declarations -Winit-self -Wmissing-format-attribute \
           -Wformat=2 -g -fPIC -D_GNU_SOURCE -D'AST_MODULE="res_consul"' -D'AST_MODULE_SELF_SYM=__internal_res_consul_self'
-LIBS += -lcurl
+LIBS += -lcurl -lconsul-c
 LDFLAGS = -Wall -ljansson -shared
 
 .PHONY: install clean
