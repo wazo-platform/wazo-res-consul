@@ -31,7 +31,7 @@ CFLAGS += -I.
 CFLAGS += -DHAVE_STDINT_H=1
 CFLAGS += -Wall -Wextra -Wno-unused-parameter -Wstrict-prototypes -Wmissing-declarations -Winit-self -Wmissing-format-attribute \
           -Wformat=2 -g -fPIC -D_GNU_SOURCE -D'AST_MODULE="res_consul"' -D'AST_MODULE_SELF_SYM=__internal_res_consul_self'
-LIBS += -lcurl -lconsul-c
+LIBS += -lcurl -llibconsul-c
 LDFLAGS = -Wall -ljansson -shared
 
 .PHONY: install clean
