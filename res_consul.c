@@ -213,6 +213,10 @@ static int load_res(int start)
         return 1;
     }
 
+    if (!ast_strlen_zero(global_config.token)) {
+        consul_client_setup_token(active_client, global_config.token);
+    }
+
     return 0;
 }
 
