@@ -39,6 +39,8 @@ struct ast_consul_client;
 struct ast_consul_service_check {
    const char *http;
    int interval;
+   const char *tls_server_name;
+   int tls_skip_verify;
 };
 
 typedef int (*ast_consul_watch_keys_callback) (int key_count, char **keys);

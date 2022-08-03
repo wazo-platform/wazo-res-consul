@@ -249,6 +249,8 @@ int ast_consul_service_register(const char* id,
             service.checks[i] = (struct consul_check_t*) ast_calloc(1, sizeof(consul_check_t));
             service.checks[i]->http = checks[i]->http;
             service.checks[i]->interval = checks[i]->interval;
+            service.checks[i]->tls_server_name = checks[i]->tls_server_name;
+            service.checks[i]->tls_skip_verify = checks[i]->tls_skip_verify;
         }
     }
 
